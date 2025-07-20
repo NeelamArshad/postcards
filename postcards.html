@@ -99,7 +99,6 @@ window.Quarto = {
 </header>
 
 
-<p>Mailing postcards to registered voters has long been a common tactic in U.S. political campaigns. In this analysis, we use data from a 2006 field experiment conducted in Michigan to explore strategies for boosting voter turnout in the upcoming Texas gubernatorial election. We estimate likely effects using a logistic regression model that predicts voter turnout based on postcard treatment, voter engagement (with interaction terms), as well as demographic factors like sex and age. This modeling framework allows us to better understand how different types of mailings may influence distinct groups of voters. Still, it is important to acknowledge that Michigan’s voter population and political landscape may differ from that of Texas, which could limit the generalizability of our findings.</p>
 <p><span class="math display">\[
 P(Y = 1) = \frac{1}{1 + \exp\left[-\left(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n\right)\right]}
 \]</span></p>
@@ -112,6 +111,594 @@ P(Y = 1) = \frac{1}{1 + \exp\left[-\left(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \
 &amp;\quad - 0.051\, \text{CivicDuty} \times \text{Always} + 0.063\, \text{Hawthorne} \times \text{Always} - 0.006\, \text{Self} \times \text{Always} + 0.006\, \text{Neighbors} \times \text{Always}
 \end{aligned}
 \]</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="hqoseptdhk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hqoseptdhk table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#hqoseptdhk thead, #hqoseptdhk tbody, #hqoseptdhk tfoot, #hqoseptdhk tr, #hqoseptdhk td, #hqoseptdhk th {
+  border-style: none;
+}
+
+#hqoseptdhk p {
+  margin: 0;
+  padding: 0;
+}
+
+#hqoseptdhk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hqoseptdhk .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#hqoseptdhk .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hqoseptdhk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hqoseptdhk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hqoseptdhk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hqoseptdhk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hqoseptdhk .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hqoseptdhk .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hqoseptdhk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hqoseptdhk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hqoseptdhk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hqoseptdhk .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#hqoseptdhk .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#hqoseptdhk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hqoseptdhk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hqoseptdhk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hqoseptdhk .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hqoseptdhk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hqoseptdhk .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#hqoseptdhk .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#hqoseptdhk .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#hqoseptdhk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hqoseptdhk .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#hqoseptdhk .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#hqoseptdhk .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hqoseptdhk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hqoseptdhk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hqoseptdhk .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hqoseptdhk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hqoseptdhk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hqoseptdhk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hqoseptdhk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hqoseptdhk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hqoseptdhk .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hqoseptdhk .gt_left {
+  text-align: left;
+}
+
+#hqoseptdhk .gt_center {
+  text-align: center;
+}
+
+#hqoseptdhk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hqoseptdhk .gt_font_normal {
+  font-weight: normal;
+}
+
+#hqoseptdhk .gt_font_bold {
+  font-weight: bold;
+}
+
+#hqoseptdhk .gt_font_italic {
+  font-style: italic;
+}
+
+#hqoseptdhk .gt_super {
+  font-size: 65%;
+}
+
+#hqoseptdhk .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#hqoseptdhk .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#hqoseptdhk .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#hqoseptdhk .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#hqoseptdhk .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#hqoseptdhk .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#hqoseptdhk .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#hqoseptdhk .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#hqoseptdhk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Estimated Effects from Voting Model</th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="term" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Term</th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Estimate</th>
+<th id="conf.low" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Lower CI</th>
+<th id="conf.high" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Upper CI</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="term">(Intercept)</td>
+<td class="gt_row gt_right" headers="estimate">-2.434</td>
+<td class="gt_row gt_right" headers="conf.low">-2.478</td>
+<td class="gt_row gt_right" headers="conf.high">-2.391</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="term">age</td>
+<td class="gt_row gt_right" headers="estimate">0.012</td>
+<td class="gt_row gt_right" headers="conf.low">0.012</td>
+<td class="gt_row gt_right" headers="conf.high">0.013</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="term">sexMale</td>
+<td class="gt_row gt_right" headers="estimate">0.036</td>
+<td class="gt_row gt_right" headers="conf.low">0.021</td>
+<td class="gt_row gt_right" headers="conf.high">0.050</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="term">treatmentCivic Duty</td>
+<td class="gt_row gt_right" headers="estimate">0.086</td>
+<td class="gt_row gt_right" headers="conf.low">-0.002</td>
+<td class="gt_row gt_right" headers="conf.high">0.173</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="term">treatmentHawthorne</td>
+<td class="gt_row gt_right" headers="estimate">0.071</td>
+<td class="gt_row gt_right" headers="conf.low">-0.019</td>
+<td class="gt_row gt_right" headers="conf.high">0.159</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="term">treatmentSelf</td>
+<td class="gt_row gt_right" headers="estimate">0.202</td>
+<td class="gt_row gt_right" headers="conf.low">0.118</td>
+<td class="gt_row gt_right" headers="conf.high">0.286</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="term">treatmentNeighbors</td>
+<td class="gt_row gt_right" headers="estimate">0.359</td>
+<td class="gt_row gt_right" headers="conf.low">0.277</td>
+<td class="gt_row gt_right" headers="conf.high">0.440</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="term">voter_classSometimes Vote</td>
+<td class="gt_row gt_right" headers="estimate">0.820</td>
+<td class="gt_row gt_right" headers="conf.low">0.780</td>
+<td class="gt_row gt_right" headers="conf.high">0.860</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="term">voter_classAlways Vote</td>
+<td class="gt_row gt_right" headers="estimate">1.609</td>
+<td class="gt_row gt_right" headers="conf.low">1.567</td>
+<td class="gt_row gt_right" headers="conf.high">1.651</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="term">treatmentCivic Duty:voter_classSometimes Vote</td>
+<td class="gt_row gt_right" headers="estimate">0.031</td>
+<td class="gt_row gt_right" headers="conf.low">-0.061</td>
+<td class="gt_row gt_right" headers="conf.high">0.124</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="term">treatmentHawthorne:voter_classSometimes Vote</td>
+<td class="gt_row gt_right" headers="estimate">0.059</td>
+<td class="gt_row gt_right" headers="conf.low">-0.034</td>
+<td class="gt_row gt_right" headers="conf.high">0.153</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="term">treatmentSelf:voter_classSometimes Vote</td>
+<td class="gt_row gt_right" headers="estimate">0.053</td>
+<td class="gt_row gt_right" headers="conf.low">-0.036</td>
+<td class="gt_row gt_right" headers="conf.high">0.143</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="term">treatmentNeighbors:voter_classSometimes Vote</td>
+<td class="gt_row gt_right" headers="estimate">0.041</td>
+<td class="gt_row gt_right" headers="conf.low">-0.046</td>
+<td class="gt_row gt_right" headers="conf.high">0.128</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="term">treatmentCivic Duty:voter_classAlways Vote</td>
+<td class="gt_row gt_right" headers="estimate">-0.051</td>
+<td class="gt_row gt_right" headers="conf.low">-0.149</td>
+<td class="gt_row gt_right" headers="conf.high">0.048</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="term">treatmentHawthorne:voter_classAlways Vote</td>
+<td class="gt_row gt_right" headers="estimate">0.063</td>
+<td class="gt_row gt_right" headers="conf.low">-0.037</td>
+<td class="gt_row gt_right" headers="conf.high">0.163</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="term">treatmentSelf:voter_classAlways Vote</td>
+<td class="gt_row gt_right" headers="estimate">-0.006</td>
+<td class="gt_row gt_right" headers="conf.low">-0.101</td>
+<td class="gt_row gt_right" headers="conf.high">0.090</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="term">treatmentNeighbors:voter_classAlways Vote</td>
+<td class="gt_row gt_right" headers="estimate">0.006</td>
+<td class="gt_row gt_right" headers="conf.low">-0.087</td>
+<td class="gt_row gt_right" headers="conf.high">0.100</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="odd">
+<td colspan="4" class="gt_sourcenote">Source: 2006 Michigan primary voting results. Estimates are on the log-odds scale. Confidence intervals are 95%.</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postcards_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Mailing postcards to registered voters has long been a common tactic in U.S. political campaigns. In this analysis, we use data from a 2006 field experiment conducted in Michigan to explore strategies for boosting voter turnout in the upcoming Texas gubernatorial election. We estimate likely effects using a logistic regression model that predicts voter turnout based on postcard treatment, voter engagement (with interaction terms), as well as demographic factors like sex and age. This modeling framework allows us to better understand how different types of mailings may influence distinct groups of voters. Still, it is important to acknowledge that Michigan’s voter population and political landscape may differ from that of Texas, which could limit the generalizability of our findings. We model voter turnout—whether a registered individual participated in the 2006 primary election—as a logistic function of postcard treatment, past voter engagement, sex, and age, including interaction terms between treatment and engagement. This structure allows us to estimate how different types of mailings affect likely, occasional, and infrequent voters differently. For example, the Civic Duty postcard increased turnout among “Rarely Vote” individuals by approximately 70 percentage points, with a 95% confidence interval of (66%, 74%), indicating a substantial and precisely estimated effect of this treatment on low-propensity voters.</p>
 
 </main>
 <!-- /main column -->
