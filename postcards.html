@@ -36,6 +36,35 @@ ul.task-list li input[type="checkbox"] {
 <link href="postcards_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="postcards_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -70,7 +99,19 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-
+<p>Mailing postcards to registered voters has long been a common tactic in U.S. political campaigns. In this analysis, we use data from a 2006 field experiment conducted in Michigan to explore strategies for boosting voter turnout in the upcoming Texas gubernatorial election. We estimate likely effects using a logistic regression model that predicts voter turnout based on postcard treatment, voter engagement (with interaction terms), as well as demographic factors like sex and age. This modeling framework allows us to better understand how different types of mailings may influence distinct groups of voters. Still, it is important to acknowledge that Michigan’s voter population and political landscape may differ from that of Texas, which could limit the generalizability of our findings.</p>
+<p><span class="math display">\[
+P(Y = 1) = \frac{1}{1 + \exp\left[-\left(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n\right)\right]}
+\]</span></p>
+<p>with <span class="math inline">\(Y \sim \text{Bernoulli}(\rho)\)</span>, where <span class="math inline">\(\rho\)</span> is the probability defined above.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat{Y} &amp;= -2.430 + 0.012\, \text{age} + 0.036\, \text{sex}_{\text{Male}} + 0.086\, \text{treatment}_{\text{CivicDuty}} + 0.071\, \text{treatment}_{\text{Hawthorne}} \\
+&amp;\quad + 0.202\, \text{treatment}_{\text{Self}} + 0.359\, \text{treatment}_{\text{Neighbors}} + 0.820\, \text{voter\_class}_{\text{Sometimes}} + 1.610\, \text{voter\_class}_{\text{Always}} \\
+&amp;\quad + 0.031\, \text{CivicDuty} \times \text{Sometimes} + 0.059\, \text{Hawthorne} \times \text{Sometimes} + 0.053\, \text{Self} \times \text{Sometimes} + 0.041\, \text{Neighbors} \times \text{Sometimes} \\
+&amp;\quad - 0.051\, \text{CivicDuty} \times \text{Always} + 0.063\, \text{Hawthorne} \times \text{Always} - 0.006\, \text{Self} \times \text{Always} + 0.006\, \text{Neighbors} \times \text{Always}
+\end{aligned}
+\]</span></p>
 
 </main>
 <!-- /main column -->
